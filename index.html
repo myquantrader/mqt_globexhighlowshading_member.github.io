@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>MQT_GapOpenBreaksPrevHighLow – NinjaTrader 8 Indicator</title>
+<title>MQT_GlobexHighLowShading – NinjaTrader 8 Indicator</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -26,10 +26,10 @@ header{
   align-items:center;
   gap:14px;
 }
-.brand img{height:56px}
+.brand img{height:40px}
 .brand h1{
   color:#00ff00;
-  font-size:1.45rem;
+  font-size:1.5rem;
   font-weight:700;
 }
 
@@ -42,20 +42,20 @@ header{
 }
 .hero h2{
   color:#00ff00;
-  font-size:2.6rem;
+  font-size:2.7rem;
   margin-bottom:18px;
 }
 .hero p{
-  max-width:1050px;
-  margin:0 auto 32px;
-  font-size:1.15rem;
+  max-width:900px;
+  margin:0 auto 30px;
+  font-size:1.2rem;
   color:#b0b0b0;
 }
 .cta-button{
   display:inline-block;
   background:#00ff00;
   color:#000;
-  padding:14px 40px;
+  padding:14px 38px;
   font-weight:800;
   border-radius:5px;
   text-decoration:none;
@@ -68,7 +68,7 @@ header{
   box-shadow:0 0 18px rgba(0,255,0,.4);
 }
 
-/* Section title */
+/* Sections */
 .section-title{
   text-align:center;
   color:#00ff00;
@@ -103,7 +103,7 @@ header{
 .screenshots{padding:60px 0;background:#000}
 .screenshot-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(360px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(420px,1fr));
   gap:30px;
 }
 .screenshot-item{
@@ -145,6 +145,25 @@ header{
 .step h3{color:#00ff00;margin-bottom:8px}
 .step p{color:#b0b0b0}
 
+/* Settings */
+.settings{padding:60px 0;background:#000}
+.settings-table{
+  width:100%;
+  border-collapse:collapse;
+  background:#1a1a1a;
+}
+.settings-table th{
+  background:#00ff00;
+  color:#000;
+  padding:14px;
+  text-align:left;
+}
+.settings-table td{
+  padding:14px;
+  border-bottom:1px solid #333;
+  color:#b0b0b0;
+}
+
 /* FAQ */
 .faq{padding:60px 0;background:#0f0f0f}
 .faq-item{
@@ -165,6 +184,7 @@ footer{
   text-align:center;
 }
 footer p{color:#666}
+footer a{color:#00ff00;text-decoration:none}
 </style>
 </head>
 
@@ -173,59 +193,71 @@ footer p{color:#666}
 <header>
   <div class="container">
     <div class="brand">
-      <img src="https://cdn.abacus.ai/images/be31417f-1ac5-4fca-b105-1b80ad42ad01.png">
-      <h1>MQT_GapOpenBreaksPrevHighLow</h1>
+      <img src="https://cdn.abacus.ai/images/aa70ee22-c459-4aeb-9432-85d1d0a10682.png" alt="myQuantrader Logo">
+      <h1>MQT_GlobexHighLowShading</h1>
     </div>
   </div>
 </header>
 
 <section class="hero">
   <div class="container">
-    <h2>First‑Tick Gap Break Detection</h2>
+    <h2>Visualize Globex Session Ranges — Instantly</h2>
     <p>
-      MQT_GapOpenBreaksPrevHighLow identifies when a bar opens beyond the prior
-      high or low by a true, configurable gap. Signals trigger on the first tick,
-      draw left‑extended reference lines, label exact tick distance, and fire
-      directional alerts with repeat and cooldown control.
+      Automatically shade the full Globex session's high-to-low range across all Globex bars.
+      Configurable time window (default 5:00 PM → 8:30 AM), adjustable opacity, and custom color.
+      Built for futures traders on NinjaTrader 8 who need clear visual separation between Globex and RTH.
     </p>
-    <a class="cta-button" href="#" onclick="alert('Add checkout URL');return false;">Download Now</a>
-  </div>
-</section>
+      <a class="cta-button" href="https://www.myquantrader.com/indicators-member">Back to Indicators</a>
+    </div>
+  </section>
 
 <section class="features">
   <div class="container">
     <h2 class="section-title">Key Features</h2>
-
     <div class="feature-grid">
+
       <div class="feature-card">
-        <h3>True Gap Validation</h3>
-        <p>Requires the open to exceed the prior bar’s high or low by a defined tick threshold.</p>
+        <h3>Full Session Range Shading</h3>
+        <p>
+          Shades from the session's highest price to lowest price across all bars within the Globex window.
+        </p>
       </div>
 
       <div class="feature-card">
-        <h3>First‑Tick Execution</h3>
-        <p>Evaluated on the first tick only — no repainting or recalculation.</p>
+        <h3>Configurable Time Window</h3>
+        <p>
+          Set <strong>Globex Start</strong> and <strong>Globex End</strong> times. Handles overnight sessions that cross midnight.
+        </p>
       </div>
 
       <div class="feature-card">
-        <h3>Left‑Extended Levels</h3>
-        <p>Horizontal reference lines extend backward for clear context.</p>
+        <h3>Adjustable Opacity</h3>
+        <p>
+          Control transparency from 1–100% to keep your chart readable while highlighting the Globex range.
+        </p>
       </div>
 
       <div class="feature-card">
-        <h3>Fully Custom Visuals</h3>
-        <p>Adjust arrow size, offsets, colors, line width, and text size.</p>
+        <h3>Custom Shade Color</h3>
+        <p>
+          Choose any color via the <strong>Shade Brush</strong> property. Default is gray for subtle contrast.
+        </p>
       </div>
 
       <div class="feature-card">
-        <h3>Exact Tick Labels</h3>
-        <p>Displays precise +Nt / −Nt gap size directly on the chart.</p>
+        <h3>Direct2D Rendering</h3>
+        <p>
+          Uses SharpDX for smooth, hardware-accelerated fills — no performance impact on large datasets.
+        </p>
       </div>
 
       <div class="feature-card">
-        <h3>Advanced Alerts</h3>
-        <p>Directional sounds with repeats, intervals, and cooldown protection.</p>
+        <h3>Real-Time Updates</h3>
+        <p>
+          Calculates on each tick (<code>OnEachTick</code>) and retro-fills finalized sessions for historical accuracy.
+        </p>
       </div>
+
     </div>
   </div>
 </section>
@@ -236,21 +268,15 @@ footer p{color:#666}
 
     <div class="screenshot-grid">
       <div class="screenshot-item">
-        <img src="https://cdn.abacus.ai/images/0f38d69a-93b7-45c0-a28d-8018ba671d84.png">
-        <h3>Intraday Gaps</h3>
-        <p>Clean detection with labeled tick distances</p>
+        <img src="https://cdn.abacus.ai/images/2da5d8f9-5bc4-49ce-beef-416d059b69e9.png" alt="Globex session shading example 1">
+        <h3>Globex Range Shading</h3>
+        <p>Blue shaded zones show Globex high-to-low ranges</p>
       </div>
 
       <div class="screenshot-item">
-        <img src="https://cdn.abacus.ai/images/d9fe5139-8e9b-4426-a1d6-0d2eec047ec5.png">
-        <h3>Momentum Continuation</h3>
-        <p>Gap breaks highlighted during trend expansion</p>
-      </div>
-
-      <div class="screenshot-item">
-        <img src="https://cdn.abacus.ai/images/38d15e90-8163-4775-98c0-1ec978117a0a.png">
-        <h3>Reversal Context</h3>
-        <p>Visual confirmation around prior session extremes</p>
+        <img src="https://cdn.abacus.ai/images/49b466ac-afa0-486e-b5a2-a39c15d067ec.png" alt="Globex session shading example 2">
+        <h3>Multiple Sessions</h3>
+        <p>Each Globex session gets its own shaded band</p>
       </div>
     </div>
   </div>
@@ -263,28 +289,65 @@ footer p{color:#666}
     <div class="steps">
       <div class="step">
         <div class="step-number">1</div>
-        <h3>Check Open Price</h3>
-        <p>The bar’s open is compared to the prior bar’s high and low.</p>
+        <h3>Detect Globex Bars</h3>
+        <p>Checks each bar's timestamp against your configured time window.</p>
       </div>
 
       <div class="step">
         <div class="step-number">2</div>
-        <h3>Apply Gap Threshold</h3>
-        <p>A minimum tick distance must be exceeded to trigger.</p>
+        <h3>Track Session Extremes</h3>
+        <p>Maintains running high/low for the current Globex session.</p>
       </div>
 
       <div class="step">
         <div class="step-number">3</div>
-        <h3>Draw & Label</h3>
-        <p>Lines, arrows, and gap size text are rendered instantly.</p>
+        <h3>Finalize on Exit</h3>
+        <p>When the session ends, retro-fills all bars with the final high/low.</p>
       </div>
 
       <div class="step">
         <div class="step-number">4</div>
-        <h3>Alert</h3>
-        <p>Directional sounds fire with optional repeats and cooldown.</p>
+        <h3>Render Shaded Bands</h3>
+        <p>Uses Direct2D to fill rectangles from high to low for each visible bar.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="settings">
+  <div class="container">
+    <h2 class="section-title">Indicator Settings</h2>
+    <table class="settings-table">
+      <thead>
+        <tr>
+          <th>Parameter</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Globex Start</strong></td>
+          <td>Start time of the Globex session (time-of-day only; date ignored).</td>
+          <td>17:00 (5:00 PM)</td>
+        </tr>
+        <tr>
+          <td><strong>Globex End</strong></td>
+          <td>End time of the Globex session (time-of-day only; date ignored).</td>
+          <td>08:30 (8:30 AM)</td>
+        </tr>
+        <tr>
+          <td><strong>Opacity %</strong></td>
+          <td>Transparency of the shaded fill (1–100).</td>
+          <td>25</td>
+        </tr>
+        <tr>
+          <td><strong>Shade Brush</strong></td>
+          <td>Color of the shaded fill. Selectable via color picker in NT8.</td>
+          <td>Gray</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </section>
 
@@ -293,26 +356,35 @@ footer p{color:#666}
     <h2 class="section-title">FAQ</h2>
 
     <div class="faq-item">
-      <h3>Does this repaint?</h3>
-      <p>No. Signals are locked on the first tick and never change.</p>
+      <h3>Does this work for overnight sessions?</h3>
+      <p>Yes. The indicator handles time windows that cross midnight (e.g., 17:00 → 08:30).</p>
     </div>
 
     <div class="faq-item">
-      <h3>Can it run only at session open?</h3>
-      <p>Yes. Enable “Only On Session Open” in the settings.</p>
+      <h3>Can I change the shaded color?</h3>
+      <p>Yes. Use the <strong>Shade Brush</strong> property to select any color.</p>
     </div>
 
     <div class="faq-item">
-      <h3>Are visuals customizable?</h3>
-      <p>Yes. Colors, offsets, line width, arrow size, and text size.</p>
+      <h3>Will it slow down my chart?</h3>
+      <p>No. Direct2D rendering is hardware-accelerated and highly efficient.</p>
     </div>
 
     <div class="faq-item">
-      <h3>What markets are supported?</h3>
-      <p>All NinjaTrader instruments — futures, forex, equities, crypto.</p>
+      <h3>Does it repaint?</h3>
+      <p>No. Once a session ends, the high/low is finalized and retro-filled.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Can I use this on any timeframe?</h3>
+      <p>Yes — minute, tick, second, or daily charts all work.</p>
     </div>
   </div>
 </section>
+
+  <div style="text-align: center; margin-bottom: 30px;">
+    <a class="cta-button" href="https://www.myquantrader.com/indicators-member">Back to Indicators</a>
+</div>
 
 <footer>
   <div class="container">
