@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>MQT_GapOpenBreaksPrevHighLow – NinjaTrader 8 Indicator</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:Segoe UI, Tahoma, sans-serif;
+  background:#0a0a0a;
+  color:#e0e0e0;
+  line-height:1.6;
+}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+
+/* Header */
+header{
+  background:#000;
+  border-bottom:2px solid #00ff00;
+  padding:16px 0;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+.brand img{height:56px}
+.brand h1{
+  color:#00ff00;
+  font-size:1.45rem;
+  font-weight:700;
+}
+
+/* Hero */
+.hero{
+  padding:80px 0;
+  text-align:center;
+  background:linear-gradient(135deg,#000,#1a1a1a);
+  border-bottom:3px solid #00ff00;
+}
+.hero h2{
+  color:#00ff00;
+  font-size:2.6rem;
+  margin-bottom:18px;
+}
+.hero p{
+  max-width:1050px;
+  margin:0 auto 32px;
+  font-size:1.15rem;
+  color:#b0b0b0;
+}
+.cta-button{
+  display:inline-block;
+  background:#00ff00;
+  color:#000;
+  padding:14px 40px;
+  font-weight:800;
+  border-radius:5px;
+  text-decoration:none;
+  border:2px solid #00ff00;
+  transition:.25s;
+}
+.cta-button:hover{
+  background:#000;
+  color:#00ff00;
+  box-shadow:0 0 18px rgba(0,255,0,.4);
+}
+
+/* Section title */
+.section-title{
+  text-align:center;
+  color:#00ff00;
+  font-size:2.2rem;
+  margin-bottom:50px;
+  text-transform:uppercase;
+  letter-spacing:2px;
+}
+
+/* Features */
+.features{padding:60px 0;background:#0f0f0f}
+.feature-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
+}
+.feature-card{
+  background:#1a1a1a;
+  border:1px solid #333;
+  border-radius:8px;
+  padding:28px;
+  transition:.25s;
+}
+.feature-card:hover{
+  border-color:#00ff00;
+  transform:translateY(-5px);
+}
+.feature-card h3{color:#00ff00;margin-bottom:12px}
+.feature-card p{color:#b0b0b0}
+
+/* Screenshots */
+.screenshots{padding:60px 0;background:#000}
+.screenshot-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(360px,1fr));
+  gap:30px;
+}
+.screenshot-item{
+  background:#1a1a1a;
+  border:1px solid #333;
+  border-radius:8px;
+  padding:18px;
+}
+.screenshot-item img{
+  width:100%;
+  border-radius:6px;
+  margin-bottom:12px;
+}
+.screenshot-item h3{text-align:center;color:#00ff00}
+.screenshot-item p{text-align:center;color:#9a9a9a;font-size:.95rem}
+
+/* How it works */
+.how-it-works{padding:60px 0;background:#0f0f0f}
+.steps{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+.step{
+  background:#1a1a1a;
+  padding:28px;
+  border-left:4px solid #00ff00;
+  border-radius:8px;
+}
+.step-number{
+  width:40px;height:40px;
+  background:#00ff00;color:#000;
+  border-radius:50%;
+  text-align:center;
+  line-height:40px;
+  font-weight:800;
+  margin-bottom:12px;
+}
+.step h3{color:#00ff00;margin-bottom:8px}
+.step p{color:#b0b0b0}
+
+/* FAQ */
+.faq{padding:60px 0;background:#0f0f0f}
+.faq-item{
+  background:#1a1a1a;
+  border-left:4px solid #00ff00;
+  border-radius:8px;
+  padding:24px;
+  margin-bottom:20px;
+}
+.faq-item h3{color:#00ff00;margin-bottom:10px}
+.faq-item p{color:#b0b0b0}
+
+/* Footer */
+footer{
+  background:#000;
+  border-top:2px solid #00ff00;
+  padding:30px 0;
+  text-align:center;
+}
+footer p{color:#666}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <div class="brand">
+      <img src="https://cdn.abacus.ai/images/be31417f-1ac5-4fca-b105-1b80ad42ad01.png">
+      <h1>MQT_GapOpenBreaksPrevHighLow</h1>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h2>First‑Tick Gap Break Detection</h2>
+    <p>
+      MQT_GapOpenBreaksPrevHighLow identifies when a bar opens beyond the prior
+      high or low by a true, configurable gap. Signals trigger on the first tick,
+      draw left‑extended reference lines, label exact tick distance, and fire
+      directional alerts with repeat and cooldown control.
+    </p>
+    <a class="cta-button" href="#" onclick="alert('Add checkout URL');return false;">Download Now</a>
+  </div>
+</section>
+
+<section class="features">
+  <div class="container">
+    <h2 class="section-title">Key Features</h2>
+
+    <div class="feature-grid">
+      <div class="feature-card">
+        <h3>True Gap Validation</h3>
+        <p>Requires the open to exceed the prior bar’s high or low by a defined tick threshold.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>First‑Tick Execution</h3>
+        <p>Evaluated on the first tick only — no repainting or recalculation.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>Left‑Extended Levels</h3>
+        <p>Horizontal reference lines extend backward for clear context.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>Fully Custom Visuals</h3>
+        <p>Adjust arrow size, offsets, colors, line width, and text size.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>Exact Tick Labels</h3>
+        <p>Displays precise +Nt / −Nt gap size directly on the chart.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>Advanced Alerts</h3>
+        <p>Directional sounds with repeats, intervals, and cooldown protection.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="screenshots">
+  <div class="container">
+    <h2 class="section-title">Chart Examples</h2>
+
+    <div class="screenshot-grid">
+      <div class="screenshot-item">
+        <img src="https://cdn.abacus.ai/images/0f38d69a-93b7-45c0-a28d-8018ba671d84.png">
+        <h3>Intraday Gaps</h3>
+        <p>Clean detection with labeled tick distances</p>
+      </div>
+
+      <div class="screenshot-item">
+        <img src="https://cdn.abacus.ai/images/d9fe5139-8e9b-4426-a1d6-0d2eec047ec5.png">
+        <h3>Momentum Continuation</h3>
+        <p>Gap breaks highlighted during trend expansion</p>
+      </div>
+
+      <div class="screenshot-item">
+        <img src="https://cdn.abacus.ai/images/38d15e90-8163-4775-98c0-1ec978117a0a.png">
+        <h3>Reversal Context</h3>
+        <p>Visual confirmation around prior session extremes</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="how-it-works">
+  <div class="container">
+    <h2 class="section-title">How It Works</h2>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3>Check Open Price</h3>
+        <p>The bar’s open is compared to the prior bar’s high and low.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3>Apply Gap Threshold</h3>
+        <p>A minimum tick distance must be exceeded to trigger.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3>Draw & Label</h3>
+        <p>Lines, arrows, and gap size text are rendered instantly.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">4</div>
+        <h3>Alert</h3>
+        <p>Directional sounds fire with optional repeats and cooldown.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="container">
+    <h2 class="section-title">FAQ</h2>
+
+    <div class="faq-item">
+      <h3>Does this repaint?</h3>
+      <p>No. Signals are locked on the first tick and never change.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Can it run only at session open?</h3>
+      <p>Yes. Enable “Only On Session Open” in the settings.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Are visuals customizable?</h3>
+      <p>Yes. Colors, offsets, line width, arrow size, and text size.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>What markets are supported?</h3>
+      <p>All NinjaTrader instruments — futures, forex, equities, crypto.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>© 2026 myQuantrader.com — All Rights Reserved</p>
+  </div>
+</footer>
+
+</body>
+</html>
